@@ -1,0 +1,46 @@
+# EditorConfig for C# Development
+
+[*]
+indent_style = space
+indent_size = 4
+charset = utf-8
+trim_trailing_whitespace = true
+insert_final_newline = true
+
+[*.cs]
+indent_style = space
+indent_size = 4
+csharp_prefer_readonly_fields = true
+csharp_prefer_property_over_field = true
+csharp_ordered_dictionaries = true
+csharp_ordered_arrays = true
+csharp_expression_bodied_methods = true
+csharp_expression_bodied_constructors = true
+csharp_space_between_parentheses = false
+csharp_space_around_binary_operators = true
+csharp_space_before_method_call_argument_list = false
+csharp_space_before_method_declaration = true
+csharp_space_before_operator = true
+csharp_space_after_operator = true
+csharp_space_between_type_names = true
+csharp_space_before_type_declaration = true
+csharp_prefer_var_type = false
+csharp_newline_between_methods = true
+csharp_newline_between_members = true
+csharp_prefer_primary_constructors = true
+csharp_prefer_file_scoped_namespaces = true
+csharp_style_whitespace_between_type_members = true
+csharp_style_whitespace_around_binary_operators = true
+csharp_style_whitespace_around_parentheses = false
+csharp_style_whitespace_around_predefined_operators = true
+csharp_style_whitespace_around_type_names = true
+csharp_style_whitespace_before_operators = true
+csharp_style_whitespace_after_operators = true
+csharp_style_whitespace_before_type_declaration = true
+csharp_style_whitespace_after_type_declaration = true
+csharp_style_whitespace_around_parentheses = false
+csharp_style_whitespace_before_parentheses = false
+csharp_style_whitespace_after_parentheses = false
+csharp_style_whitespace_around_type_names = true
+csharp_space_before_type_declaration = true
+csharp_space_after_type_declaration = true
