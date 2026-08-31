@@ -1,0 +1,43 @@
+version: '3.8'
+services:
+  sql-db:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    container_name: sql-db
+    ports:
+      - "1433:1433"
+    environment:
+      - ACCEPT_EULA=Y
+      - MSSQL_SA_PASSWORD=YourStrong!Password123
+    volumes:
+      - sql_data:/var/mssql/data
+
+  cosmos-emulator:
+    image: mcr.microsoft.com/azure-cosmosdb/emulator:latest
+    container_name: cosmos-emulator
+    ports:
+      - "8081:8081"
+      - "10255:10255"
+      - "10256:10256"
+      - "10000:10000"
+      - "10001:10001"
+      - "10002:10002"
+    environment:
+      - AZ_COSMOS_DB_EMULATOR_PORT=8081
+    ports:
+      - "10000-10002:10000-10002"
+
+  app-host:
+    image: mcr.microsoft.com/dotnet/runtime:8.0
+    container_name: app-host
+    working_dir: /app
+    volumes:
+      - .:/app
+    ports:
+      - "5000:80"
+    depends_on:
+      - sql-db
+      - cosmos-emulator
+    command: dotnet run --project ./src/WebApi/WebApi.csproj
+
+volumes:
+  sql_data:
